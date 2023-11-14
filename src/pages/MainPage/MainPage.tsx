@@ -3,7 +3,7 @@
 export function MainPage() {
     return (
         <>
-            <h1>Hello world</h1>
+            <h1>HOnza ma malej pindik</h1>
         </>
     )
 }
