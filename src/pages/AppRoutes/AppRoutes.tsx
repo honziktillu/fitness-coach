@@ -3,6 +3,7 @@ import { MainPage } from "../MainPage/MainPage";
 import Dashboard from "../Dashboard/Dashboard";
 import SignIn from "../SignIn/SignIn";
 import SignUp from "../SignUp/SignUp";
+import NotFound from "../NotFound/NotFound";
 
 export function AppRoutes() {
     return (
@@ -12,7 +13,7 @@ export function AppRoutes() {
                 <Route path="/dashboard" element={<Dashboard />}/>
                 <Route path="/signin" element={<SignIn />}/>
                 <Route path="/signup" element={<SignUp />}/>
-                <Route />
+                <Route path="*" element={<NotFound />} />
             </Routes>
         </HashRouter>
     )
