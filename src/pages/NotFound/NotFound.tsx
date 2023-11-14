@@ -11,7 +11,7 @@ function Copyright() {
     <Typography variant="body2" color="text.secondary">
       {'Copyright © '}
       <Link color="inherit" href="https://mui.com/">
-        Your Website
+        Fitness Coach
       </Link>{' '}
       {new Date().getFullYear()}
       {'.'}
@@ -35,13 +35,13 @@ export default function NotFound() {
         <CssBaseline />
         <Container component="main" sx={{ mt: 8, mb: 2 }} maxWidth="sm">
           <Typography variant="h2" component="h1" gutterBottom>
-            Sticky footer
+            Page not found 404
           </Typography>
           <Typography variant="h5" component="h2" gutterBottom>
-            {'Pin a footer to the bottom of the viewport.'}
-            {'The footer will move as the main element of the page grows.'}
+            {'YES YES YES'}
+            {'NO NO NO'}
           </Typography>
-          <Typography variant="body1">Sticky footer placeholder.</Typography>
+          <Typography variant="body1">Somesink is misink</Typography>
         </Container>
         <Box
           component="footer"
@@ -57,7 +57,7 @@ export default function NotFound() {
         >
           <Container maxWidth="sm">
             <Typography variant="body1">
-              My sticky footer can be found here.
+              Střední průmyslová škola Mladá Boleslav
             </Typography>
             <Copyright />
           </Container>
