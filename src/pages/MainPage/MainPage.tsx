@@ -7,6 +7,12 @@ export function MainPage() {
             <Link to={"/dashboard"}>
                 <p>Dashboard</p>
             </Link>
+            <Link to={"/signin"}>
+                <p>Sign In</p>
+            </Link>
+            <Link to={"/signup"}>
+                <p>Sign Up</p>
+            </Link>
         </>
     )
 }
