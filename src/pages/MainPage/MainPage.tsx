@@ -4,6 +4,7 @@ export function MainPage() {
     return (
         <>
             <h1>Hello world</h1>
+            <img src="./pika.png" alt="" />
             <Link to={"/dashboard"}>
                 <p>Dashboard</p>
             </Link>
