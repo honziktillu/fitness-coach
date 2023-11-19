@@ -18,13 +18,11 @@ import Link from '@mui/material/Link';
 import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import NotificationsIcon from '@mui/icons-material/Notifications';
-import { listItems, secondaryListItems } from './listItems';
+import { listItems, secondaryListItems, bottomListItems } from './listItems';
 import Chart from './Chart';
 import Deposits from './Deposits';
 import Orders from './Orders';
-
-
-
+import '../../index.css'
 
 
 function Copyright(props: any) {
@@ -99,8 +97,6 @@ export default function Dashboard() {
     setOpen(!open);
   };
 
-  
-
   return (
     <ThemeProvider theme={defaultTheme}>
       <Box sx={{ display: 'flex'  }}>
@@ -111,6 +107,7 @@ export default function Dashboard() {
               
               pr: '24px', backgroundColor: '#FFF' // keep right padding when drawer closed
             }}
+            className='banger'
           >
             <IconButton
               edge="start"
@@ -148,11 +145,11 @@ export default function Dashboard() {
               <ChevronLeftIcon />
             </IconButton>
           </Toolbar>
-          <Divider />
           <List component="nav">
             {listItems}
             <Divider sx={{ my: 1 }} />
             {secondaryListItems}
+            {bottomListItems}
           </List>
         </Drawer>
         <Box
@@ -207,3 +204,4 @@ export default function Dashboard() {
     </ThemeProvider>
   );
 }
+
