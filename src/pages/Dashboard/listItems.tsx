@@ -21,79 +21,87 @@ import LayersIcon from '@mui/icons-material/Layers';
 import AssignmentIcon from '@mui/icons-material/Assignment';
 import {useEffect, useState} from 'react'
 
-export const listItems = (
-  <React.Fragment>
+export const ListItems = (props: any): JSX.Element => {
+  return(
+    <React.Fragment>
     <ListItemButton>
       <ListItemIcon>
-      <img src={notes} alt="" className='icon' />
+      <img src={notes} style={props.open ? {marginLeft: '2.75rem'} : {marginLeft: '.5rem'}} alt="" className='icon' />
       </ListItemIcon>
       <ListItemText primary="Notes" />
     </ListItemButton>
     <ListItemButton>
       <ListItemIcon>
-        <img src={calendar} alt="" className='icon' />
+        <img src={calendar} style={props.open ? {marginLeft: '2.75rem'} : {marginLeft: '.5rem'}} alt="" className='icon' />
       </ListItemIcon>
       <ListItemText primary="Timetable" />
     </ListItemButton>
     <ListItemButton>
       <ListItemIcon>
-      <img src={run} alt="" className='icon' />
+      <img src={run} style={props.open ? {marginLeft: '2.75rem'} : {marginLeft: '.5rem'}} alt="" className='icon' />
       </ListItemIcon>
       <ListItemText primary="Exercises" />
     </ListItemButton>
     <ListItemButton>
       <ListItemIcon>
-      <img src={bowl} alt="" className='icon' />
+      <img src={bowl} style={props.open ? {marginLeft: '2.75rem'} : {marginLeft: '.5rem'}} alt="" className='icon' />
       </ListItemIcon>
       <ListItemText primary="Dishes" />
     </ListItemButton>
     <ListItemButton>
       <ListItemIcon>
-      <img src={weight} alt="" className='icon' />
+      <img src={weight} style={props.open ? {marginLeft: '2.75rem'} : {marginLeft: '.5rem'}} alt="" className='icon' />
       </ListItemIcon>
       <ListItemText primary="Programs" />
     </ListItemButton>
   </React.Fragment>
-);
+  )
+}
 
-export const secondaryListItems = (
-  <React.Fragment>
+
+export const SecondaryListItems = (props: any):JSX.Element => {
+  return (
+    <React.Fragment>
     <ListItemButton>
       <ListItemIcon>
-      <img src={stats} alt="" className='icon' />
+      <img src={stats} style={props.open ? {marginLeft: '2.75rem'} : {marginLeft: '.5rem'}} alt="" className='icon' />
       </ListItemIcon>
       <ListItemText primary="Stats" />
     </ListItemButton>
     <ListItemButton>
       <ListItemIcon>
-      <img src={friends} alt="" className='icon' />
+      <img src={friends} style={props.open ? {marginLeft: '2.75rem'} : {marginLeft: '.5rem'}} alt="" className='icon' />
       </ListItemIcon>
       <ListItemText primary="Friends" />
     </ListItemButton>
     <ListItemButton>
       <ListItemIcon>
-      <img src={bell} alt="" className='icon' />
+      <img src={bell} style={props.open ? {marginLeft: '2.75rem'} : {marginLeft: '.5rem'}} alt="" className='icon' />
       </ListItemIcon>
       <ListItemText primary="Notificatons" />
     </ListItemButton>
   </React.Fragment>
-);
+  )
+}
 
-export const bottomListItems = (
-  <div className="bottomListItems">
+export const BottomListItems = (props: any):JSX.Element => {
+  return (
+<div className="bottomListItems">
   <React.Fragment>
     <ListItemButton>
       <ListItemIcon>
-      <img src={stats} alt="" className='icon' />
+      <img src={stats} style={props.open ? {marginLeft: '2.75rem'} : {marginLeft: '.5rem'}} alt="" className='icon' />
       </ListItemIcon>
       <ListItemText primary="Settings" />
     </ListItemButton>
     <ListItemButton>
       <ListItemIcon>
-      <img src={logout} alt="" className='icon' />
+      <img src={logout} style={props.open ? {marginLeft: '2.75rem'} : {marginLeft: '.5rem'}} alt="" className='icon' />
       </ListItemIcon>
       <ListItemText className='logoutText' primary="Log out" />
     </ListItemButton>
   </React.Fragment>
   </div>
-);
+  )
+}
+

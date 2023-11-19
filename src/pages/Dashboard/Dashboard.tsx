@@ -18,11 +18,12 @@ import Link from '@mui/material/Link';
 import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import NotificationsIcon from '@mui/icons-material/Notifications';
-import { listItems, secondaryListItems, bottomListItems } from './listItems';
+import { ListItems, SecondaryListItems, BottomListItems } from './listItems';
 import Chart from './Chart';
 import Deposits from './Deposits';
 import Orders from './Orders';
 import '../../index.css'
+import LOGO from '../../assets/LOGO.svg'
 
 
 function Copyright(props: any) {
@@ -121,15 +122,7 @@ export default function Dashboard() {
             >
               <MenuIcon />
             </IconButton>
-            <Typography
-              component="h1"
-              variant="h6"
-              color="inherit"
-              noWrap
-              sx={{ flexGrow: 1, color: '#9471F6', fontFamily: 'PT Sans' }}
-            >
-              Dashboard
-            </Typography>
+            <img src={LOGO} className='logo' alt="" />
           </Toolbar>
         </AppBar>
         <Drawer variant="permanent" open={open}>
@@ -146,10 +139,10 @@ export default function Dashboard() {
             </IconButton>
           </Toolbar>
           <List component="nav">
-            {listItems}
+            <ListItems open={open} />
             <Divider sx={{ my: 1 }} />
-            {secondaryListItems}
-            {bottomListItems}
+            <SecondaryListItems open={open} />
+            <BottomListItems open={open} />
           </List>
         </Drawer>
         <Box

@@ -51,6 +51,7 @@ body {
 
 .icon {
   margin-left: 2.75rem;
+  transition: 200ms ease;
 }
 
 .bottomListItems {
@@ -61,4 +62,9 @@ body {
 
 .logoutText {
   color: #F67171 !important;
+}
+
+.logo {
+  height: 36.3px;
+  width: 7rem;
 }
