@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import * as React from 'react';
 import { styled, createTheme, ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -17,10 +18,13 @@ import Link from '@mui/material/Link';
 import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import NotificationsIcon from '@mui/icons-material/Notifications';
-import { listItems, secondaryListItems } from './listItems';
+import { ListItems, SecondaryListItems, BottomListItems } from './listItems';
 import Chart from './Chart';
 import Deposits from './Deposits';
 import Orders from './Orders';
+import '../../index.css'
+import LOGO from '../../assets/LOGO.svg'
+
 
 function Copyright(props: any) {
   return (
@@ -35,7 +39,7 @@ function Copyright(props: any) {
   );
 }
 
-const drawerWidth: number = 240;
+const drawerWidth = 240;
 
 interface AppBarProps extends MuiAppBarProps {
   open?: boolean;
@@ -96,13 +100,15 @@ export default function Dashboard() {
 
   return (
     <ThemeProvider theme={defaultTheme}>
-      <Box sx={{ display: 'flex' }}>
+      <Box sx={{ display: 'flex'  }}>
         <CssBaseline />
         <AppBar position="absolute" open={open}>
           <Toolbar
             sx={{
-              pr: '24px', // keep right padding when drawer closed
+              
+              pr: '24px', backgroundColor: '#FFF' // keep right padding when drawer closed
             }}
+            className='banger'
           >
             <IconButton
               edge="start"
@@ -111,25 +117,12 @@ export default function Dashboard() {
               onClick={toggleDrawer}
               sx={{
                 marginRight: '36px',
-                ...(open && { display: 'none' }),
+                ...(open && { display: 'none', }),
               }}
             >
               <MenuIcon />
             </IconButton>
-            <Typography
-              component="h1"
-              variant="h6"
-              color="inherit"
-              noWrap
-              sx={{ flexGrow: 1 }}
-            >
-              Dashboard
-            </Typography>
-            <IconButton color="inherit">
-              <Badge badgeContent={4} color="secondary">
-                <NotificationsIcon />
-              </Badge>
-            </IconButton>
+            <img src={LOGO} className='logo' alt="" />
           </Toolbar>
         </AppBar>
         <Drawer variant="permanent" open={open}>
@@ -145,20 +138,17 @@ export default function Dashboard() {
               <ChevronLeftIcon />
             </IconButton>
           </Toolbar>
-          <Divider />
           <List component="nav">
-            {listItems}
+            <ListItems open={open} />
             <Divider sx={{ my: 1 }} />
-            {secondaryListItems}
+            <SecondaryListItems open={open} />
+            <BottomListItems open={open} />
           </List>
         </Drawer>
         <Box
           component="main"
           sx={{
-            backgroundColor: (theme) =>
-              theme.palette.mode === 'light'
-                ? theme.palette.grey[100]
-                : theme.palette.grey[900],
+            backgroundColor: 'white',
             flexGrow: 1,
             height: '100vh',
             overflow: 'auto',
@@ -207,3 +197,4 @@ export default function Dashboard() {
     </ThemeProvider>
   );
 }
+

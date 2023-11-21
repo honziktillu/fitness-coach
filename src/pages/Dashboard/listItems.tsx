@@ -1,3 +1,13 @@
+import bell from '../../assets/Bell.svg'
+import bowl from '../../assets/Bowl.svg'
+import calendar from '../../assets/Calendar.svg'
+import friends from '../../assets/Friends.svg'
+import notes from '../../assets/Note.svg'
+import run from '../../assets/Run.svg'
+import stats from '../../assets/Stats.svg'
+import weight from '../../assets/Weight.svg'
+import settings from '../../assets/Settings.svg'
+import logout from '../../assets/Logout.svg'
 import * as React from 'react';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
@@ -9,64 +19,89 @@ import PeopleIcon from '@mui/icons-material/People';
 import BarChartIcon from '@mui/icons-material/BarChart';
 import LayersIcon from '@mui/icons-material/Layers';
 import AssignmentIcon from '@mui/icons-material/Assignment';
+import {useEffect, useState} from 'react'
 
-export const listItems = (
+export const ListItems = (props: any): JSX.Element => {
+  return(
+    <React.Fragment>
+    <ListItemButton>
+      <ListItemIcon>
+      <img src={notes} style={props.open ? {marginLeft: '2.75rem'} : {marginLeft: '.5rem'}} alt="" className='icon' />
+      </ListItemIcon>
+      <ListItemText primary="Notes" />
+    </ListItemButton>
+    <ListItemButton>
+      <ListItemIcon>
+        <img src={calendar} style={props.open ? {marginLeft: '2.75rem'} : {marginLeft: '.5rem'}} alt="" className='icon' />
+      </ListItemIcon>
+      <ListItemText primary="Timetable" />
+    </ListItemButton>
+    <ListItemButton>
+      <ListItemIcon>
+      <img src={run} style={props.open ? {marginLeft: '2.75rem'} : {marginLeft: '.5rem'}} alt="" className='icon' />
+      </ListItemIcon>
+      <ListItemText primary="Exercises" />
+    </ListItemButton>
+    <ListItemButton>
+      <ListItemIcon>
+      <img src={bowl} style={props.open ? {marginLeft: '2.75rem'} : {marginLeft: '.5rem'}} alt="" className='icon' />
+      </ListItemIcon>
+      <ListItemText primary="Dishes" />
+    </ListItemButton>
+    <ListItemButton>
+      <ListItemIcon>
+      <img src={weight} style={props.open ? {marginLeft: '2.75rem'} : {marginLeft: '.5rem'}} alt="" className='icon' />
+      </ListItemIcon>
+      <ListItemText primary="Programs" />
+    </ListItemButton>
+  </React.Fragment>
+  )
+}
+
+
+export const SecondaryListItems = (props: any):JSX.Element => {
+  return (
+    <React.Fragment>
+    <ListItemButton>
+      <ListItemIcon>
+      <img src={stats} style={props.open ? {marginLeft: '2.75rem'} : {marginLeft: '.5rem'}} alt="" className='icon' />
+      </ListItemIcon>
+      <ListItemText primary="Stats" />
+    </ListItemButton>
+    <ListItemButton>
+      <ListItemIcon>
+      <img src={friends} style={props.open ? {marginLeft: '2.75rem'} : {marginLeft: '.5rem'}} alt="" className='icon' />
+      </ListItemIcon>
+      <ListItemText primary="Friends" />
+    </ListItemButton>
+    <ListItemButton>
+      <ListItemIcon>
+      <img src={bell} style={props.open ? {marginLeft: '2.75rem'} : {marginLeft: '.5rem'}} alt="" className='icon' />
+      </ListItemIcon>
+      <ListItemText primary="Notificatons" />
+    </ListItemButton>
+  </React.Fragment>
+  )
+}
+
+export const BottomListItems = (props: any):JSX.Element => {
+  return (
+<div className="bottomListItems">
   <React.Fragment>
     <ListItemButton>
       <ListItemIcon>
-        <DashboardIcon />
+      <img src={stats} style={props.open ? {marginLeft: '2.75rem'} : {marginLeft: '.5rem'}} alt="" className='icon' />
       </ListItemIcon>
-      <ListItemText primary="Dashboard" />
+      <ListItemText primary="Settings" />
     </ListItemButton>
     <ListItemButton>
       <ListItemIcon>
-        <ShoppingCartIcon />
+      <img src={logout} style={props.open ? {marginLeft: '2.75rem'} : {marginLeft: '.5rem'}} alt="" className='icon' />
       </ListItemIcon>
-      <ListItemText primary="Orders" />
-    </ListItemButton>
-    <ListItemButton>
-      <ListItemIcon>
-        <PeopleIcon />
-      </ListItemIcon>
-      <ListItemText primary="Customers" />
-    </ListItemButton>
-    <ListItemButton>
-      <ListItemIcon>
-        <BarChartIcon />
-      </ListItemIcon>
-      <ListItemText primary="Reports" />
-    </ListItemButton>
-    <ListItemButton>
-      <ListItemIcon>
-        <LayersIcon />
-      </ListItemIcon>
-      <ListItemText primary="Integrations" />
+      <ListItemText className='logoutText' primary="Log out" />
     </ListItemButton>
   </React.Fragment>
-);
+  </div>
+  )
+}
 
-export const secondaryListItems = (
-  <React.Fragment>
-    <ListSubheader component="div" inset>
-      Saved reports
-    </ListSubheader>
-    <ListItemButton>
-      <ListItemIcon>
-        <AssignmentIcon />
-      </ListItemIcon>
-      <ListItemText primary="Current month" />
-    </ListItemButton>
-    <ListItemButton>
-      <ListItemIcon>
-        <AssignmentIcon />
-      </ListItemIcon>
-      <ListItemText primary="Last quarter" />
-    </ListItemButton>
-    <ListItemButton>
-      <ListItemIcon>
-        <AssignmentIcon />
-      </ListItemIcon>
-      <ListItemText primary="Year-end sale" />
-    </ListItemButton>
-  </React.Fragment>
-);
