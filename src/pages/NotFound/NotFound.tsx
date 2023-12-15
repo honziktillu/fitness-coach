@@ -4,15 +4,12 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
-import Link from '@mui/material/Link';
+import { Link } from 'react-router-dom';
 
 function Copyright() {
   return (
     <Typography variant="body2" color="text.secondary">
       {'Copyright © '}
-      <Link color="inherit" href="https://mui.com/">
-        Fitness Coach
-      </Link>{' '}
       {new Date().getFullYear()}
       {'.'}
     </Typography>
@@ -63,6 +60,7 @@ export default function NotFound() {
           </Container>
         </Box>
       </Box>
+      <Link to={"/"}>Domů</Link>
     </ThemeProvider>
   );
 }
