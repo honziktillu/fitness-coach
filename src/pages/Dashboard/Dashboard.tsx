@@ -43,7 +43,7 @@ function Copyright(props: any) {
   );
 }
 
-const drawerWidth = "200";
+const drawerWidth = "12rem";
 
 interface AppBarProps extends MuiAppBarProps {
   open?: boolean;
@@ -71,6 +71,7 @@ const Drawer = styled(MuiDrawer, {
   "& .MuiDrawer-paper": {
     position: "relative",
     whiteSpace: "nowrap",
+    backgroundColor : "#F2F2F2",
     width: drawerWidth,
     transition: theme.transitions.create("width", {
       easing: theme.transitions.easing.sharp,
@@ -85,7 +86,7 @@ const Drawer = styled(MuiDrawer, {
       }),
       width: theme.spacing(7),
       [theme.breakpoints.up("sm")]: {
-        width: theme.spacing(7),
+        width: theme.spacing(8),
       },
     }),
   },
@@ -102,8 +103,8 @@ export const themeOptions: ThemeOptions = {
       main: "#6F40F6",
     },
     action: {
-      selected: "#DCD4F6",
-      selectedOpacity: 0.8,
+      selected: "#6F40F6",
+      selectedOpacity: 0.2,
       hover: "#DCD4F6",
     },
   },
@@ -224,11 +225,11 @@ export default function Dashboard() {
             component="nav"
           >
             <Grid container flexGrow={1} xs={12} direction={"column"}>
-              <Grid item xs={3}>
+              <Grid item xs={3} alignItems={"center"}>
                 <ListItems open={open} />
                 <Divider
-                  variant="middle"
-                  sx={{ my: 2, color: "#333333", backgroundColor: "#333333" }}
+                  variant={ open ? "middle" : "fullWidth"}
+                  sx={{ my: 2, color: "#333333", backgroundColor: "#333333"}}
                 />
                 <SecondaryListItems open={open} />
               </Grid>
