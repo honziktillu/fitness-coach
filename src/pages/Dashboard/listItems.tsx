@@ -19,54 +19,40 @@ export const ListItems = (props: any): JSX.Element => {
     <React.Fragment>
       <ListItemButton>
         <ListItemIcon>
-          <img
-            src={notes}
-            alt=""
-            className="icon"
-          />
+          <img src={notes} alt="" className="icon" />
         </ListItemIcon>
         <ListItemText primary="Notes" />
       </ListItemButton>
       <ListItemButton selected>
         <ListItemIcon>
-          <img
-            src={calendar}
-            alt=""
-            className="icon"
-          />
+          <img src={calendar} alt="" className="icon" />
         </ListItemIcon>
         <ListItemText primary="Timetable" />
       </ListItemButton>
-      <ListItemButton>
-        <ListItemIcon>
-          <img
-            src={run}
-            alt=""
-            className="icon"
-          />
-        </ListItemIcon>
-        <ListItemText primary="Exercises" />
-      </ListItemButton>
-      <ListItemButton>
-        <ListItemIcon>
-          <img
-            src={bowl}
-            alt=""
-            className="icon"
-          />
-        </ListItemIcon>
-        <ListItemText primary="Dishes" />
-      </ListItemButton>
-      <ListItemButton>
-        <ListItemIcon>
-          <img
-            src={weight}
-            alt=""
-            className="icon"
-          />
-        </ListItemIcon>
-        <ListItemText primary="Programs" />
-      </ListItemButton>
+      <Link to="/exercises">
+        <ListItemButton>
+          <ListItemIcon>
+            <img src={run} alt="" className="icon" />
+          </ListItemIcon>
+          <ListItemText primary="Exercises" />
+        </ListItemButton>
+      </Link>
+      <Link to="/dishes">
+        <ListItemButton>
+          <ListItemIcon>
+            <img src={bowl} alt="" className="icon" />
+          </ListItemIcon>
+          <ListItemText primary="Dishes" />
+        </ListItemButton>
+      </Link>
+      <Link to="/programs">
+        <ListItemButton>
+          <ListItemIcon>
+            <img src={weight} alt="" className="icon" />
+          </ListItemIcon>
+          <ListItemText primary="Programs" />
+        </ListItemButton>
+      </Link>
     </React.Fragment>
   );
 };
@@ -74,33 +60,30 @@ export const ListItems = (props: any): JSX.Element => {
 export const SecondaryListItems = (props: any): JSX.Element => {
   return (
     <React.Fragment>
-      <ListItemButton>
-        <ListItemIcon>
-          <img
-            src={stats}
-            alt=""
-          />
-        </ListItemIcon>
-        <ListItemText primary="Stats" />
-      </ListItemButton>
-      <ListItemButton>
-        <ListItemIcon>
-          <img
-            src={friends}
-            alt=""
-          />
-        </ListItemIcon>
-        <ListItemText primary="Friends" />
-      </ListItemButton>
-      <ListItemButton>
-        <ListItemIcon>
-          <img
-            src={bell}
-            alt=""
-          />
-        </ListItemIcon>
-        <ListItemText primary="Notificatons" />
-      </ListItemButton>
+      <Link to="/achievements">
+        <ListItemButton>
+          <ListItemIcon>
+            <img src={stats} alt="" />
+          </ListItemIcon>
+          <ListItemText primary="Achievements" />
+        </ListItemButton>
+      </Link>
+      <Link to="/friends">
+        <ListItemButton>
+          <ListItemIcon>
+            <img src={friends} alt="" />
+          </ListItemIcon>
+          <ListItemText primary="Friends" />
+        </ListItemButton>
+      </Link>
+      <Link to="/notifications">
+        <ListItemButton>
+          <ListItemIcon>
+            <img src={bell} alt="" />
+          </ListItemIcon>
+          <ListItemText primary="Notificatons" />
+        </ListItemButton>
+      </Link>
     </React.Fragment>
   );
 };
@@ -110,22 +93,14 @@ export const BottomListItems = (props: any): JSX.Element => {
     <React.Fragment>
       <ListItemButton>
         <ListItemIcon>
-          <img
-            src={settings}
-            alt=""
-            className="icon"
-          />
+          <img src={settings} alt="" className="icon" />
         </ListItemIcon>
         <ListItemText primary="Settings" />
       </ListItemButton>
-      <Link style={{textDecoration : "none", color : "red"}} to={"/"}>
+      <Link style={{ textDecoration: "none", color: "red" }} to={"/"}>
         <ListItemButton>
           <ListItemIcon>
-            <img
-              src={logout}
-              alt=""
-              className="icon"
-            />
+            <img src={logout} alt="" className="icon" />
           </ListItemIcon>
           <ListItemText primary="Log out" />
         </ListItemButton>
